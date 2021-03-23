@@ -43,10 +43,6 @@ int32_t main(void) {
 			while (bit_is_clear(PIND, BUTTON));
 			i = switch_led(i);
 			eeprom_write_byte(0x00, i);
-		} else {
-			while (bit_is_set(PIND, BUTTON));
-			i = switch_led(i);
-			eeprom_write_byte(0x00, i);
 		};
 
 		PORTC = i;
