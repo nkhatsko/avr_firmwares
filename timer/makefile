@@ -1,22 +1,23 @@
 # name project
 TAG := main
 
-# name mmcu
-MMCU := atmega8
+# name device
+DEVICE := atmega8
 
 # name compiler
 GC := avr-gcc
 
 # compiler flag
 GCFLAG := -Wall
+GCFLAG += -O3
 GCFLAG += -std=c11
-GCFLAG += -mmcu=$(MMCU)
+GCFLAG += -mmcu=$(DEVICE)
 
 # avrdude
 AD := avrdude
 
 # avrdude flag
-ADFLAG := -p $(MMCU)
+ADFLAG := -p $(DEVICE)
 ADFLAG += -P usb
 ADFLAG += -c usbasp
 
